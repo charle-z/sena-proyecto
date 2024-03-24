@@ -1,0 +1,7 @@
+{
+  "name": "sios",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

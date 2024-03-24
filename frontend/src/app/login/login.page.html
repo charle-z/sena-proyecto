@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <!-- <ion-toolbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="imagen-con-fondo">
+  <form [formGroup]="formularioLogin" class="contenido-formulario">
+    <ion-item>
+      <ion-label class="usuario" position="floating">Cédula:</ion-label>
+      <ion-input type="text" formControlName="id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="contraseña" position="floating">Contraseña:</ion-label>
+      <ion-input type="password" formControlName="contrasena"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button class="ingresar" [disabled]="!formularioLogin.valid" (click)="ingresar()" color="primary">
+      Iniciar sesión
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,111 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+$colors: (primary: #39a900,
+  secundary: #3c3c3c,
+  grisclaro:#949599,
+  danger: #ec5353,
+  light: #ffff,
+  dark: #000,
+  extra1: #645452,
+  extra2: #24405d,
+  extra3: #483d8b,
+  extra4: #ffb197,
+  extra5: #7fb5b5);
+
+/* @font-face {
+  font-family: 'couture';
+  src: url('../src/assets/fonts/coolvetica\ rg.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url('../src/assets/fonts/Roboto-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+ */
+/*   segunda fuente */
+.letra2 {
+  font-family: 'roboto';
+  font-size: 17px;
+}
+
+.letracontenido {
+  font-family: 'roboto';
+  font-size: 18px;
+  margin-bottom: 40px;
+  }
+
+
+
+/* titulo cabecera */
+.titulocabecera {
+  font-family: 'coolvetica';
+  font-size: 20px;
+  color: #ffff;
+}
+
+/* titulo de interfaz */
+ion-back-button {
+  background-color: #3c3c3c;
+  color: #ffff;
+  border-color: #3c3c3c;
+}
+
+#f1 {
+  background-color: #3c3c3c;
+}
+
+
+
+.botonraya {
+  background-color: #3c3c3c;
+  color: #ffff;
+  border-color: #3c3c3c;
+  width: 56px;
+  height: 56px;
+  
+}
+
+.titulocolor1 {
+  color: #ffffff;
+  font-family: 'roboto';
+  font-size: 13px;
+}
+
+ion-card-header {
+  font-family: 'roboto';
+  font-size: 15px;
+}
+
+.ion-padding {
+  font-family: 'roboto';
+  font-size: 12px;
+  margin-left: 6px;
+}

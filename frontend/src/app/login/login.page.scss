@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "coolvetica";
+  src: url("../../assets/fonts/coolvetica\ rg.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../../assets/fonts/Roboto-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.imagen-con-fondo {
+  --background: url(../../assets/img/fondoapp.jpg) no-repeat center center/cover;
+  height: 100%;
+  font-family: "coolvetica";
+  font-size: 20px;
+  
+}
+
+.contenido-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(255, 254, 254, 0.8);
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.usuario,
+.contraseña {
+  font-family: "coolvetica"!important;
+  font-size: 18px;
+  color: #3c3c3c;
+}
+
+.ingresar {
+  margin-top: 16px;
+  width: 100%;
+  font-family: "coolvetica";
+}
+

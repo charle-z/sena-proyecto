@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "coolvetica";
+  src: url("../../assets/fonts/coolvetica\ rg.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../../assets/fonts/Roboto-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#cabecera {
+  background-color: #3c3c3c;
+  display: block;
+  margin: auto;
+  text-align: center;
+
+  #tt {
+    color: white;
+    font-family: "couture";
+
+    font-size: 18px;
+  }
+}
+
+.about-app {
+  padding: 20px;
+  text-align: center;
+  font-family: "roboto";
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 60%;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: "coolvetica";
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  font-family: "coolvetica";
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}

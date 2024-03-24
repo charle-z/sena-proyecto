@@ -1,0 +1,191 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="titulo">
+    <ion-buttons slot="start" class="botonraya2">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="ion-text-center">
+      <ion-card-header id="hi">
+        <ion-card-title color="light" class="titulocabecera">Historial Ordenes</ion-card-title>
+      </ion-card-header>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="create()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-segment (ionChange)="segmentChanged($event)" scrollable="true" [value]="valueSelected" id="f1">
+    <ion-segment-button value="1" id="res">
+      <ion-card-title color="light" class="titulocolor1">
+        Pedido
+      </ion-card-title>
+    </ion-segment-button>
+
+
+    <ion-segment-button value="2" id="res">
+      <ion-card-title color="light" class="titulocolor1">
+        Ordenes
+      </ion-card-title>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+  <!-- ========================================================================== -->
+
+
+  <div *ngIf="valueSelected === '1'">
+    <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <div class="ion-text-center">
+      <ion-card-title id="hi2" class="letracontenido"> Historial de pedido</ion-card-title>
+    </div>
+    <div *ngFor="let p of datos; let i = index">
+      <div id="{{p.estado==='aprobado'?'verde':p.estado==='revisar'?'amarillo':'rojo'}}">
+        <ion-card>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>
+                  <ion-grid>
+                    <ion-row class="letra2">
+                      <ion-col>
+                        {{p.nombre_articulo}}
+                      </ion-col>
+                      <ion-col class="letra2">
+                        <b>{{p.fecha}}</b>
+                      </ion-col>
+                      <!-- <ion-icon color="primary" (click)="updateDatos(p)" name="pencil-outline"></ion-icon> -->
+                    </ion-row>
+                  </ion-grid>
+                </ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      <b class="letra2">ID:</b> &nbsp;{{p.id_pedido}} <br><br>
+                      <b class="letra2">Cliente:</b> &nbsp; {{p.nombre}}&nbsp;
+                    </ion-card-title>
+                  </ion-card-header>
+                  <div class="ion-text-left">
+                    <ion-card-header>
+                      <ion-card-title>
+                        <b class="letra2">Descripción:</b>&nbsp; &#160;
+                      </ion-card-title>
+                      {{p.descripcion}}
+                    </ion-card-header>
+
+
+                    <ion-card-header>
+                      <ion-card-title>
+                        <b class="letra2">Lugar:</b> &nbsp; &#160;
+                      </ion-card-title>
+                      {{p.lugar}}
+                    </ion-card-header>
+
+                    <ion-card-header>
+                      <ion-card-title>
+                        <b class="letra2">Altura:</b> &nbsp; &#160;
+                      </ion-card-title>
+                      {{p.altura}}
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================== -->
+
+  <div *ngIf="valueSelected === '2'">
+    <ion-refresher slot="fixed" (ionRefresh)="recargar1($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <div class="ion-text-center">
+      <ion-card-title id="hi2" class="letracontenido">Historial de ordenes</ion-card-title>
+    </div>
+    <br>
+    <div *ngFor="let p of orden; let i = index">
+      <div id="{{p.estado==='aprobado'?'bverde':p.estado==='revisar'?'bamarillo':p.estado==='rechazado'?'brojo':''}}">
+        <ion-card>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col class="letra2">
+                        {{p.nombre_articulo}}
+                      </ion-col>
+                      <ion-col class="letra2">
+                        <b>{{p.fecha}}</b>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-card id="texto">
+
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>ID:</b> &nbsp; &#160;{{p.id_orden}}
+                    </ion-card-title>
+                  </ion-card-header>
+
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>Tipo de servicio:</b> &nbsp; &#160;
+                    </ion-card-title>
+                    <br>{{p.tipo_orden}}
+                  </ion-card-header>
+
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>Observacione:s</b> &nbsp; &#160;
+                    </ion-card-title>
+                    <br>{{p.observaciones}}
+                  </ion-card-header>
+
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>Fecha entrega:</b>&nbsp; &#160;
+                    </ion-card-title>
+                    <br>
+                    {{p.fecha_entrega}}
+                  </ion-card-header>
+
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>Fecha expedicion:</b>&nbsp; &#160;
+                    </ion-card-title>
+                    <br>
+                    {{p.fecha_expedicion}}
+                  </ion-card-header>
+                </ion-card>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+  <!-- ========================================================================== -->
+</ion-content>

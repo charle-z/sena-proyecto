@@ -1,0 +1,154 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="titulo">
+    <ion-buttons slot="start" class="botonraya">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-card-header id="cabecera">
+      <ion-card-title class="titulocabecera">Historial inventario</ion-card-title>
+
+    </ion-card-header>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-segment scrollable="true" [value]="valueSelected" (ionChange)="segmentChanged($event)" id="f1">
+    <ion-segment-button value="1"  id="res">
+      <ion-label class="titulocolor1">Herramienta</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2"  id="res">
+      <ion-label class="titulocolor1">Material</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="3"  id="res">
+      <ion-label class="titulocolor1">categoría</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="valueSelected === '1'">
+    <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <div class="ion-text-center">
+      <br>
+      <ion-card-title id="hi2" class="letracontenido">Historial de herramientas </ion-card-title>
+      <div *ngFor="let c of herramienta; let i =index">
+        <div id='{{c.estado==1?"verde":"rojo"}}'>
+          <ion-card>
+            <ion-accordion-group>
+              <ion-accordion value="first">
+                <ion-item slot="header">
+                  <ion-label>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col class="titulotabs">
+                          {{c.nombre}}
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content" id="texto">
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>ID:</b> &nbsp;{{c.id_herramienta}}
+                    </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>categoría:</b>&#160; {{c.nombre_categoria}}
+                    </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-header>
+                    <ion-card-title class="letra2">
+                      <b>Observaciones:</b>&nbsp;<br>
+                      <p> {{c.observaciones}}</p>
+                    </ion-card-title>
+                  </ion-card-header>
+                </div>
+              </ion-accordion>
+            </ion-accordion-group>
+          </ion-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="valueSelected === '2'">
+    <ion-refresher slot="fixed" (ionRefresh)="recargar1($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <div class="ion-text-center">
+      <br>
+      <ion-card-title id="hi2" class="letracontenido">Historial de material</ion-card-title>
+    </div>
+    <div *ngFor="let p of material; let i =index">
+      <div>
+        <ion-card>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <b class="letracontenido">{{p.nombre}}</b> ( {{p.nombre_presentacion}} )<br>
+                        <b class="letracontenido">total:</b>&nbsp;{{p.cantidad}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" id="texto">
+                <ion-card-header>
+                  <ion-card-title class="letra2">
+                    <b>ID:</b> {{p.id_material}}
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-header>
+                  <ion-card-title class="letra2">
+                    <b>Observaciones:</b> &nbsp; &#160;{{p.observaciones}}
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-header>
+                  <ion-card-title class="letra2">
+                    <b>Precio:</b>&nbsp; &#160;{{p.precio}}
+                  </ion-card-title>
+                </ion-card-header>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="valueSelected === '3'">
+    <ion-refresher slot="fixed" (ionRefresh)="recargar0($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <div class="ion-text-center">
+      <br>
+      <ion-card-title class="letracontenido">categoría</ion-card-title>
+    </div>
+    <div *ngFor="let x of categoria; let i =index">
+      <div>
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title class="letra2">
+              <b> ID:</b> {{x.id_categoria}} &nbsp; <br>
+            </ion-card-title>
+            <ion-card-subtitle class="letra2">
+              <b> nombre: </b>{{x.nombre}}
+              <br> <b> Cantidad disponibles:</b> &nbsp;{{x.cantidad_disponible}}
+              <br> <b> Cantidad prestadas:</b> &nbsp; {{x.cantidad_prestada}}
+              <br> <b> Total Cantidad:</b> &nbsp; {{x.cantidad_total}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

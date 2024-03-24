@@ -1,0 +1,72 @@
+<ion-header>
+  <div class="ion-text-left">
+    <ion-toolbar color="secondary">
+      <ion-title class="titulocabecera">Crear Pedido</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cancelar()" class="letra2" color="primary">Cancelar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <br> <br> <br> <br>
+
+
+
+    <ion-item class="ion-margin-bottom">
+      <!-- <ion-title>fecha</ion-title> -->
+      <ion-input class="letra2" type="date" placeholder="AAAA/MM/DD" formControlName="fecha" required>Fecha:</ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input class="letra2" type="number" placeholder="Documento" formControlName="fk_cliente" required></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input class="letra2" type="text" placeholder="descripcion" formControlName="descripcion"
+        required></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input class="letra2" type="text" placeholder="nombre articulo" formControlName="nombre_articulo"
+        required></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input class="letra2" type="text" placeholder="lugar" formControlName="lugar" required></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input class="letra2" type="number" placeholder="altura" formControlName="altura" required></ion-input>
+    </ion-item>
+
+    <!--  <ion-item class="ion-margin-bottom">
+      <ion-input class="letra2" type="text" placeholder="estado" formControlName="estado" required></ion-input>
+    </ion-item>
+ -->
+
+    <ion-item class="ion-margin-bottom">
+      <ion-select class="letra2" placeholder="estado:" type="text" formControlName="estado">
+        <ion-select-option class="letra2" value="revisar">Por revisar </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-select class="letra2" placeholder="Tipo de orden:" type="text" formControlName="tipo_orden" required>
+        <ion-select-option value="instalacion" class="letra2">Instalacion</ion-select-option>
+        <ion-select-option value="reparacion" class="letra2">Reparacion</ion-select-option>
+        <ion-select-option value="Fabricacion" class="letra2">Fabricacion</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="ion-text-center">
+      <ion-button type="submit" [disabled]="form.invalid" class="ion-margin-top">
+        {{isUpdate? 'Actualizar':'crear'}}
+      </ion-button>
+    </div>
+
+  </form>
+</ion-content>

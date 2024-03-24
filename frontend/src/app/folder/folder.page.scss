@@ -1,0 +1,31 @@
+#rojo {
+  background-color: #ec5353;
+}
+#verde {
+  background-color: #39a900;
+}
+
+#hi {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+#cabecera {
+  background-color: #3c3c3c;
+  display: block;
+  margin: auto;
+  text-align: center;
+ 
+
+  #tt {
+    color: white;
+    font-family: 'couture';
+
+    font-size: 18px;
+  }
+}
+
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}

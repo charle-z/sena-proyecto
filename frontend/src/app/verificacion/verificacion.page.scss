@@ -1,0 +1,167 @@
+.botonraya2 {
+  background-color: #3c3c3c;
+  color: #ffff;
+  border-color: #3c3c3c;
+  width: 56px;
+  height: 56px;
+}
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+/* ============= */
+#verde {
+  background-color: #39a900;
+}
+#rojo {
+  background-color: #ec5353;
+}
+#amarillo {
+  background-color: #949599;
+}
+#null {
+  background-color: #0f0e09;
+}
+/* ========== */
+#brojo {
+  background-color: #ec5353;
+}
+#bverde {
+  background-color: #39a900;
+}
+#bamarillo {
+  background-color: #949599;
+}
+#bnull {
+  background-color: #483d8b;
+}
+
+/* ========== */
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #3c3c3c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.ion-toolbar {
+  color: #3c3c3c;
+}
+
+#img {
+  display: block;
+  margin: auto;
+  text-align: left;
+}
+#f1 {
+  background-color: #3c3c3c;
+}
+
+#res {
+  /*     background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px; */
+  width: 50%;
+}
+
+#tex {
+  color: white;
+
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#f2 {
+  background-color: #d3cccc;
+  color: black;
+  display: block;
+  margin: auto;
+}
+
+#hi {
+  background-color: #3c3c3c;
+  display: block;
+  margin: auto;
+  text-align: center;
+  border: #3c3c3c;
+  #hi2 {
+    color: white;
+  }
+}
+
+#esta1 {
+  color: #ff0000;
+}
+#esta2 {
+  color: green;
+}
+
+#rojo {
+  background-color: #ec5353;
+}
+#verde {
+  background-color: #39a900;
+}
+#n {
+  color: black;
+}
+
+#borde {
+  border: #ff0000;
+}
+
+#a {
+  background-color: #fd0000;
+  color: #ff0000;
+}
+#b {
+  background-color: #00ff15;
+  color: green;
+}
+#c {
+  background-color: #39a900;
+  color: purple;
+}
+#d {
+  background-color: #ff0000;
+  color: rgb(0, 26, 128);
+}
+
+/* $si: rgb(13, 253, 0);
+$no: rgb(255, 0, 0);
+$nose: rgb(0, 68, 255);
+
+
+#p.estado {
+  @if p.estado == si {
+    color: rgb(13, 253, 0);
+  } @else if p.estado == no {
+    color: rgb(253, 0, 0);
+  } @else if p.estado == nose {
+    color: rgb(0, 21, 253);
+  }@else if p.estado == eso {
+    color: rgb(0, 21, 253);
+  }
+  
+} */
