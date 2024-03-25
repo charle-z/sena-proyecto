@@ -30,7 +30,7 @@ function getDB()
 
 
 $app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("HEY1!");
+    $response->getBody()->write("Conexion!");
     return $response;
 });
 

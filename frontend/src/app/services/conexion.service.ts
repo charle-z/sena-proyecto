@@ -13,7 +13,7 @@ export class ConexionService {
   get refresh$() {
     return this._refresh$
   };
-  url = "https://localhost/movil" //direccion del backend
+  url = "https://localhost" //direccion del backend
   /* 1r\O2PVf96VUEyxm */
   /* http://127.0.0.1:80 */
   /* https://sios19.000webhostapp.com/movil */
